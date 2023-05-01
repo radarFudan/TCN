@@ -46,3 +46,5 @@ python char_cnn_test.py --dataset ptb
 would (download if no data found, and) train on the PennTreebank (PTB) dataset.
 
 - Empirically, we found that Adam works better than SGD on the text8 dataset.
+
+

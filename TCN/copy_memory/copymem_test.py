@@ -5,43 +5,71 @@ import torch.optim as optim
 from torch.autograd import Variable
 import numpy as np
 import sys
+
 sys.path.append("../../")
-from TCN.copy_memory.utils import data_generator
+from TCN.copy_memory.utils import data_generator, time_weighted_power_loss
 from TCN.copy_memory.model import TCN
 import time
 
 
-parser = argparse.ArgumentParser(description='Sequence Modeling - Copying Memory Task')
-parser.add_argument('--batch_size', type=int, default=32, metavar='N',
-                    help='batch size (default: 32)')
-parser.add_argument('--cuda', action='store_false',
-                    help='use CUDA (default: True)')
-parser.add_argument('--dropout', type=float, default=0.0,
-                    help='dropout applied to layers (default: 0.0)')
-parser.add_argument('--clip', type=float, default=1.0,
-                    help='gradient clip, -1 means no clip (default: 1.0)')
-parser.add_argument('--epochs', type=int, default=50,
-                    help='upper epoch limit (default: 50)')
-parser.add_argument('--ksize', type=int, default=8,
-                    help='kernel size (default: 8)')
-parser.add_argument('--iters', type=int, default=100,
-                    help='number of iters per epoch (default: 100)')
-parser.add_argument('--levels', type=int, default=8,
-                    help='# of levels (default: 8)')
-parser.add_argument('--blank_len', type=int, default=1000, metavar='N',
-                    help='The size of the blank (i.e. T) (default: 1000)')
-parser.add_argument('--seq_len', type=int, default=10,
-                    help='initial history size (default: 10)')
-parser.add_argument('--log-interval', type=int, default=50, metavar='N',
-                    help='report interval (default: 50')
-parser.add_argument('--lr', type=float, default=5e-4,
-                    help='initial learning rate (default: 5e-4)')
-parser.add_argument('--optim', type=str, default='RMSprop',
-                    help='optimizer to use (default: RMSprop)')
-parser.add_argument('--nhid', type=int, default=10,
-                    help='number of hidden units per layer (default: 10)')
-parser.add_argument('--seed', type=int, default=1111,
-                    help='random seed (default: 1111)')
+parser = argparse.ArgumentParser(description="Sequence Modeling - Copying Memory Task")
+parser.add_argument(
+    "--batch_size", type=int, default=32, metavar="N", help="batch size (default: 32)"
+)
+parser.add_argument("--cuda", action="store_false", help="use CUDA (default: True)")
+parser.add_argument(
+    "--dropout",
+    type=float,
+    default=0.0,
+    help="dropout applied to layers (default: 0.0)",
+)
+parser.add_argument(
+    "--clip",
+    type=float,
+    default=1.0,
+    help="gradient clip, -1 means no clip (default: 1.0)",
+)
+parser.add_argument(
+    "--epochs", type=int, default=50, help="upper epoch limit (default: 50)"
+)
+parser.add_argument("--ksize", type=int, default=8, help="kernel size (default: 8)")
+parser.add_argument(
+    "--iters", type=int, default=100, help="number of iters per epoch (default: 100)"
+)
+parser.add_argument("--levels", type=int, default=8, help="# of levels (default: 8)")
+parser.add_argument(
+    "--blank_len",
+    type=int,
+    default=1000,
+    metavar="N",
+    help="The size of the blank (i.e. T) (default: 1000)",
+)
+parser.add_argument(
+    "--seq_len", type=int, default=10, help="initial history size (default: 10)"
+)
+parser.add_argument(
+    "--log-interval",
+    type=int,
+    default=50,
+    metavar="N",
+    help="report interval (default: 50",
+)
+parser.add_argument(
+    "--lr", type=float, default=5e-4, help="initial learning rate (default: 5e-4)"
+)
+parser.add_argument(
+    "--optim", type=str, default="RMSprop", help="optimizer to use (default: RMSprop)"
+)
+parser.add_argument(
+    "--nhid",
+    type=int,
+    default=10,
+    help="number of hidden units per layer (default: 10)",
+)
+parser.add_argument(
+    "--seed", type=int, default=1111, help="random seed (default: 1111)"
+)
+parser.add_argument("--power", type=int, default=2, help="random seed (default: 2)")
 args = parser.parse_args()
 
 torch.manual_seed(args.seed)
@@ -51,7 +79,7 @@ if torch.cuda.is_available():
 
 
 batch_size = args.batch_size
-seq_len = args.seq_len    # The size to memorize
+seq_len = args.seq_len  # The size to memorize
 epochs = args.epochs
 iters = args.iters
 T = args.blank_len
@@ -81,18 +109,30 @@ if args.cuda:
 criterion = nn.CrossEntropyLoss()
 lr = args.lr
 optimizer = getattr(optim, args.optim)(model.parameters(), lr=lr)
+weight = torch.ones((1, n_steps, 1))
+for i in range(1, n_steps):
+    weight[0, i, 0] = i**args.power
+weight /= torch.sum(weight)
+weight = weight.cuda()
 
 
 def evaluate():
     model.eval()
     with torch.no_grad():
         out = model(test_x.unsqueeze(1).contiguous())
-        loss = criterion(out.view(-1, n_classes), test_y.view(-1))
+
+        weighted_out = out * weight[:, : out.shape[1]]
+        # loss = criterion(out.view(-1, n_classes), test_y.view(-1))
+        loss = criterion(weighted_out.view(-1, n_classes), test_y.view(-1))
+
         pred = out.view(-1, n_classes).data.max(1, keepdim=True)[1]
         correct = pred.eq(test_y.data.view_as(pred)).cpu().sum()
         counter = out.view(-1, n_classes).size(0)
-        print('\nTest set: Average loss: {:.8f}  |  Accuracy: {:.4f}\n'.format(
-            loss.item(), 100. * correct / counter))
+        print(
+            "\nTest set: Average loss: {:.8f}  |  Accuracy: {:.4f}\n".format(
+                loss.item(), 100.0 * correct / counter
+            )
+        )
         return loss.item()
 
 
@@ -109,10 +149,16 @@ def train(ep):
 
         x = train_x[start_ind:end_ind]
         y = train_y[start_ind:end_ind]
-        
+
         optimizer.zero_grad()
         out = model(x.unsqueeze(1).contiguous())
-        loss = criterion(out.view(-1, n_classes), y.view(-1))
+
+        # print(out.shape, y.shape)
+        # exit()
+        weighted_out = out * weight[:, : out.shape[1]]
+        # loss = criterion(out.view(-1, n_classes), y.view(-1))
+        loss = criterion(weighted_out.view(-1, n_classes), y.view(-1))
+
         pred = out.view(-1, n_classes).data.max(1, keepdim=True)[1]
         correct += pred.eq(y.data.view_as(pred)).cpu().sum()
         counter += out.view(-1, n_classes).size(0)
@@ -125,10 +171,18 @@ def train(ep):
         if batch_idx > 0 and batch_idx % args.log_interval == 0:
             avg_loss = total_loss / args.log_interval
             elapsed = time.time() - start_time
-            print('| Epoch {:3d} | {:5d}/{:5d} batches | lr {:2.5f} | ms/batch {:5.2f} | '
-                  'loss {:5.8f} | accuracy {:5.4f}'.format(
-                ep, batch_idx, n_train // batch_size+1, args.lr, elapsed * 1000 / args.log_interval,
-                avg_loss, 100. * correct / counter))
+            print(
+                "| Epoch {:3d} | {:5d}/{:5d} batches | lr {:2.5f} | ms/batch {:5.2f} | "
+                "loss {:5.8f} | accuracy {:5.4f}".format(
+                    ep,
+                    batch_idx,
+                    n_train // batch_size + 1,
+                    args.lr,
+                    elapsed * 1000 / args.log_interval,
+                    avg_loss,
+                    100.0 * correct / counter,
+                )
+            )
             start_time = time.time()
             total_loss = 0
             correct = 0

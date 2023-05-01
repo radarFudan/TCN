@@ -5,3 +5,6 @@ wikitext-103/
 *.log
 *.pyc
 __pycache__/
+
+*/data/*
+TCN/char_cnn/data/
