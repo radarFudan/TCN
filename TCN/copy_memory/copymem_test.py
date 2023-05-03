@@ -1,3 +1,5 @@
+import pandas as pd
+
 import argparse
 import torch
 import torch.nn as nn
@@ -116,6 +118,13 @@ weight /= torch.sum(weight)
 weight = weight.cuda()
 
 
+df = pd.DataFrame(
+    np.zeros((epochs, 4), dtype=float),
+    index=range(epochs),
+    columns=["epoch", "loss", "accuracy", "grad_norm"],
+)
+
+
 def evaluate():
     model.eval()
     with torch.no_grad():
@@ -133,7 +142,8 @@ def evaluate():
                 loss.item(), 100.0 * correct / counter
             )
         )
-        return loss.item()
+
+        return loss.item(), 100.0 * correct / counter
 
 
 def train(ep):
@@ -171,9 +181,16 @@ def train(ep):
         if batch_idx > 0 and batch_idx % args.log_interval == 0:
             avg_loss = total_loss / args.log_interval
             elapsed = time.time() - start_time
+
+            grad_norm = 0
+            for name, param in model.named_parameters():
+                if param.requires_grad:
+                    grad_norm += param.grad.data.norm(2).item() ** 2
+            grad_norm = grad_norm ** (1.0 / 2)
+
             print(
-                "| Epoch {:3d} | {:5d}/{:5d} batches | lr {:2.5f} | ms/batch {:5.2f} | "
-                "loss {:5.8f} | accuracy {:5.4f}".format(
+                "| Epoch {:3d} | {:4d}/{:4d} batches | lr {:2.5f} | ms/batch {:5.2f} | "
+                "loss {:5.7f} | accuracy {:5.4f} | gradnorm {:5.4f}".format(
                     ep,
                     batch_idx,
                     n_train // batch_size + 1,
@@ -181,14 +198,22 @@ def train(ep):
                     elapsed * 1000 / args.log_interval,
                     avg_loss,
                     100.0 * correct / counter,
+                    grad_norm,
                 )
             )
+
             start_time = time.time()
             total_loss = 0
             correct = 0
             counter = 0
 
+            df["grad_norm"][ep - 1] = grad_norm
+
 
 for ep in range(1, epochs + 1):
     train(ep)
-    evaluate()
+    loss, accuracy = evaluate()
+    df["epoch"][ep - 1] = ep
+    df["loss"][ep - 1] = loss
+    df["accuracy"][ep - 1] = accuracy.detach().cpu().numpy()
+df.to_csv(f"results_{args.power}.csv")
