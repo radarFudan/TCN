@@ -216,4 +216,4 @@ for ep in range(1, epochs + 1):
     df["epoch"][ep - 1] = ep
     df["loss"][ep - 1] = loss
     df["accuracy"][ep - 1] = accuracy.detach().cpu().numpy()
-df.to_csv(f"results_{args.power}.csv")
+df.to_csv(f"results_{args.seq_len//10}{args.power}g.csv")

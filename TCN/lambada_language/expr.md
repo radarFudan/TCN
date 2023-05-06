@@ -8,3 +8,4 @@ add checkpoint
 
 CUDA_VISIBLE_DEVICES=0 python3 lambada_test.py --batch_size 32 --epochs 30 --save model_benchmark.pt > benchmark.txt
 CUDA_VISIBLE_DEVICES=1 python3 lambada_test.py --batch_size 32 --epochs 30 --save model_WL_benchmark.pt > WL_benchmark.txt
+CUDA_VISIBLE_DEVICES=0 python3 lambada_test.py --batch_size 32 --epochs 30 --save model_WL_power2.pt --power 2 > WL_power2.txt

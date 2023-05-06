@@ -1,5 +1,4 @@
 .DS_Store/
-lambada/
 wikitext-103/
 *.pt
 *.log
@@ -8,3 +7,4 @@ __pycache__/
 
 */data/*
 TCN/char_cnn/data/
+TCN/lambada_language/data/

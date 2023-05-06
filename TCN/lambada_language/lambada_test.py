@@ -96,6 +96,11 @@ parser.add_argument(
     type=int,
     default=0,
 )
+parser.add_argument(
+    "--save",
+    type=str,
+    default="./model.pt",
+)
 args = parser.parse_args()
 
 # Set the random seed manually for reproducibility.
@@ -149,8 +154,10 @@ def evaluate(data_source):
             if args.cuda:
                 data, targets = data.cuda(), targets.cuda()
             output = model(data)
+
             final_output = output[:, -1].contiguous().view(-1, n_words)
             final_target = targets[:, -1].contiguous().view(-1)
+
             loss = criterion(final_output, final_target)
             total_loss += loss.data
             processed_data_size += 1
@@ -186,6 +193,13 @@ def train():
             weight[0, i, 0] = (i + 1) ** args.power
         weight /= weight.sum()
         final_output = final_output * weight
+
+        # print(final_output.shape, final_target.shape)
+        # exit()
+        final_target = final_target.view(-1)
+        final_output = final_output.view(-1, n_words)
+        # print(final_output.shape, final_target.shape)
+        # exit()
 
         loss = criterion(final_output, final_target)
         loss.backward()
@@ -246,7 +260,7 @@ if __name__ == "__main__":
             # Save the model if the validation loss is the best we've seen so far.
 
             if val_loss < best_vloss:
-                with open("model.pt", "wb") as f:
+                with open(args.save, "wb") as f:
                     print("Save model!\n")
                     torch.save(model, f)
                 best_vloss = val_loss
@@ -261,7 +275,7 @@ if __name__ == "__main__":
         print("Exiting from training early")
 
     # Load the best saved model.
-    with open("model.pt", "rb") as f:
+    with open(args.save, "rb") as f:
         model = torch.load(f)
 
     # Run on test data.
