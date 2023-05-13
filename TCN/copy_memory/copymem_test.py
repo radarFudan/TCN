@@ -112,8 +112,12 @@ criterion = nn.CrossEntropyLoss()
 lr = args.lr
 optimizer = getattr(optim, args.optim)(model.parameters(), lr=lr)
 weight = torch.ones((1, n_steps, 1))
-for i in range(1, n_steps):
-    weight[0, i, 0] = i**args.power
+if args.power <= 99:
+    for i in range(1, n_steps):
+        weight[0, i, 0] = (i / n_steps) ** args.power
+else:
+    for i in range(1, n_steps):
+        weight[0, i, 0] = 1
 weight /= torch.sum(weight)
 weight = weight.cuda()
 
