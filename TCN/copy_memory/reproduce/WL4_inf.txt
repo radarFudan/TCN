@@ -1,0 +1,452 @@
+Namespace(batch_size=32, cuda=True, dropout=0.0, clip=1.0, epochs=50, ksize=8, iters=100, levels=8, blank_len=1000, seq_len=150, log_interval=50, lr=0.0005, optim='RMSprop', nhid=10, seed=1111, power=100)
+Preparing data...
+| Epoch   1 |   50/ 313 batches | lr 0.00050 | ms/batch 132.55 | loss 0.9772827 | accuracy 83.6135 | gradnorm 0.3671
+| Epoch   1 |  100/ 313 batches | lr 0.00050 | ms/batch 39.99 | loss 0.5158553 | accuracy 88.4615 | gradnorm 0.5699
+| Epoch   1 |  150/ 313 batches | lr 0.00050 | ms/batch 43.42 | loss 0.4575853 | accuracy 88.4615 | gradnorm 0.7558
+| Epoch   1 |  200/ 313 batches | lr 0.00050 | ms/batch 44.32 | loss 0.4020607 | accuracy 88.4615 | gradnorm 1.2366
+| Epoch   1 |  250/ 313 batches | lr 0.00050 | ms/batch 41.70 | loss 0.3449820 | accuracy 88.9417 | gradnorm 3.0614
+| Epoch   1 |  300/ 313 batches | lr 0.00050 | ms/batch 48.17 | loss 0.3006956 | accuracy 89.6259 | gradnorm 3.8435
+
+Test set: Average loss: 0.29380164  |  Accuracy: 89.5203
+
+| Epoch   2 |   50/ 313 batches | lr 0.00050 | ms/batch 46.09 | loss 0.2899385 | accuracy 89.7007 | gradnorm 3.9836
+| Epoch   2 |  100/ 313 batches | lr 0.00050 | ms/batch 37.86 | loss 0.2781975 | accuracy 89.6937 | gradnorm 2.7964
+| Epoch   2 |  150/ 313 batches | lr 0.00050 | ms/batch 43.66 | loss 0.2720417 | accuracy 89.7454 | gradnorm 3.4003
+| Epoch   2 |  200/ 313 batches | lr 0.00050 | ms/batch 45.88 | loss 0.2688249 | accuracy 89.7231 | gradnorm 1.7110
+| Epoch   2 |  250/ 313 batches | lr 0.00050 | ms/batch 40.11 | loss 0.2648082 | accuracy 89.7552 | gradnorm 2.3725
+| Epoch   2 |  300/ 313 batches | lr 0.00050 | ms/batch 46.25 | loss 0.2622461 | accuracy 89.7669 | gradnorm 2.8406
+
+Test set: Average loss: 0.25533637  |  Accuracy: 89.8214
+
+| Epoch   3 |   50/ 313 batches | lr 0.00050 | ms/batch 42.05 | loss 0.2641561 | accuracy 89.7745 | gradnorm 1.0938
+| Epoch   3 |  100/ 313 batches | lr 0.00050 | ms/batch 38.17 | loss 0.2554935 | accuracy 89.7990 | gradnorm 1.2721
+| Epoch   3 |  150/ 313 batches | lr 0.00050 | ms/batch 37.46 | loss 0.2540012 | accuracy 89.8078 | gradnorm 0.6401
+| Epoch   3 |  200/ 313 batches | lr 0.00050 | ms/batch 44.46 | loss 0.2512067 | accuracy 89.8316 | gradnorm 0.8888
+| Epoch   3 |  250/ 313 batches | lr 0.00050 | ms/batch 47.50 | loss 0.2500289 | accuracy 89.8289 | gradnorm 1.3127
+| Epoch   3 |  300/ 313 batches | lr 0.00050 | ms/batch 42.51 | loss 0.2483819 | accuracy 89.8577 | gradnorm 0.9667
+
+Test set: Average loss: 0.24566330  |  Accuracy: 89.8758
+
+| Epoch   4 |   50/ 313 batches | lr 0.00050 | ms/batch 46.15 | loss 0.2519224 | accuracy 89.8605 | gradnorm 1.1035
+| Epoch   4 |  100/ 313 batches | lr 0.00050 | ms/batch 36.39 | loss 0.2458750 | accuracy 89.8624 | gradnorm 0.7649
+| Epoch   4 |  150/ 313 batches | lr 0.00050 | ms/batch 45.34 | loss 0.2542414 | accuracy 89.7576 | gradnorm 0.1277
+| Epoch   4 |  200/ 313 batches | lr 0.00050 | ms/batch 42.10 | loss 0.2440602 | accuracy 89.8857 | gradnorm 0.3115
+| Epoch   4 |  250/ 313 batches | lr 0.00050 | ms/batch 40.39 | loss 0.2444108 | accuracy 89.8732 | gradnorm 0.8828
+| Epoch   4 |  300/ 313 batches | lr 0.00050 | ms/batch 41.79 | loss 0.2444461 | accuracy 89.8795 | gradnorm 0.6154
+
+Test set: Average loss: 0.24349411  |  Accuracy: 89.8899
+
+| Epoch   5 |   50/ 313 batches | lr 0.00050 | ms/batch 38.51 | loss 0.2495179 | accuracy 89.8727 | gradnorm 0.3752
+| Epoch   5 |  100/ 313 batches | lr 0.00050 | ms/batch 37.98 | loss 0.2440949 | accuracy 89.8659 | gradnorm 1.0382
+| Epoch   5 |  150/ 313 batches | lr 0.00050 | ms/batch 41.43 | loss 0.2440639 | accuracy 89.8836 | gradnorm 0.9609
+| Epoch   5 |  200/ 313 batches | lr 0.00050 | ms/batch 43.82 | loss 0.2444950 | accuracy 89.8814 | gradnorm 0.2291
+| Epoch   5 |  250/ 313 batches | lr 0.00050 | ms/batch 42.35 | loss 0.2437051 | accuracy 89.8830 | gradnorm 0.7987
+| Epoch   5 |  300/ 313 batches | lr 0.00050 | ms/batch 44.32 | loss 0.2439365 | accuracy 89.8907 | gradnorm 0.4477
+
+Test set: Average loss: 0.24275796  |  Accuracy: 89.8978
+
+| Epoch   6 |   50/ 313 batches | lr 0.00050 | ms/batch 44.53 | loss 0.2563335 | accuracy 89.7787 | gradnorm 0.1284
+| Epoch   6 |  100/ 313 batches | lr 0.00050 | ms/batch 41.91 | loss 0.2426090 | accuracy 89.8972 | gradnorm 0.2579
+| Epoch   6 |  150/ 313 batches | lr 0.00050 | ms/batch 43.45 | loss 0.2421865 | accuracy 89.9064 | gradnorm 0.3655
+| Epoch   6 |  200/ 313 batches | lr 0.00050 | ms/batch 46.88 | loss 0.2425142 | accuracy 89.8974 | gradnorm 0.2875
+| Epoch   6 |  250/ 313 batches | lr 0.00050 | ms/batch 40.47 | loss 0.2429675 | accuracy 89.8969 | gradnorm 0.6462
+| Epoch   6 |  300/ 313 batches | lr 0.00050 | ms/batch 43.51 | loss 0.2431219 | accuracy 89.8921 | gradnorm 0.3187
+
+Test set: Average loss: 0.24227771  |  Accuracy: 89.8991
+
+| Epoch   7 |   50/ 313 batches | lr 0.00050 | ms/batch 41.95 | loss 0.2655820 | accuracy 89.7422 | gradnorm 0.1137
+| Epoch   7 |  100/ 313 batches | lr 0.00050 | ms/batch 36.41 | loss 0.2422098 | accuracy 89.9130 | gradnorm 0.1724
+| Epoch   7 |  150/ 313 batches | lr 0.00050 | ms/batch 37.85 | loss 0.2417973 | accuracy 89.9166 | gradnorm 0.2126
+| Epoch   7 |  200/ 313 batches | lr 0.00050 | ms/batch 44.35 | loss 0.2417291 | accuracy 89.9122 | gradnorm 0.2224
+| Epoch   7 |  250/ 313 batches | lr 0.00050 | ms/batch 40.27 | loss 0.2417070 | accuracy 89.9166 | gradnorm 0.3843
+| Epoch   7 |  300/ 313 batches | lr 0.00050 | ms/batch 40.31 | loss 0.2416887 | accuracy 89.9188 | gradnorm 0.3741
+
+Test set: Average loss: 0.24181885  |  Accuracy: 89.9036
+
+| Epoch   8 |   50/ 313 batches | lr 0.00050 | ms/batch 50.03 | loss 0.2466469 | accuracy 89.9158 | gradnorm 0.3303
+| Epoch   8 |  100/ 313 batches | lr 0.00050 | ms/batch 36.72 | loss 0.2414105 | accuracy 89.9182 | gradnorm 0.2683
+| Epoch   8 |  150/ 313 batches | lr 0.00050 | ms/batch 41.25 | loss 0.2417376 | accuracy 89.9362 | gradnorm 0.2100
+| Epoch   8 |  200/ 313 batches | lr 0.00050 | ms/batch 44.01 | loss 0.2526696 | accuracy 89.7821 | gradnorm 0.1465
+| Epoch   8 |  250/ 313 batches | lr 0.00050 | ms/batch 43.84 | loss 0.2413759 | accuracy 89.9318 | gradnorm 0.2471
+| Epoch   8 |  300/ 313 batches | lr 0.00050 | ms/batch 40.29 | loss 0.2411772 | accuracy 89.9428 | gradnorm 0.2702
+
+Test set: Average loss: 0.24122156  |  Accuracy: 89.9328
+
+| Epoch   9 |   50/ 313 batches | lr 0.00050 | ms/batch 44.04 | loss 0.2458533 | accuracy 89.9581 | gradnorm 0.1464
+| Epoch   9 |  100/ 313 batches | lr 0.00050 | ms/batch 42.32 | loss 0.2409226 | accuracy 89.9802 | gradnorm 0.2384
+| Epoch   9 |  150/ 313 batches | lr 0.00050 | ms/batch 40.09 | loss 0.2409461 | accuracy 90.0099 | gradnorm 0.1646
+| Epoch   9 |  200/ 313 batches | lr 0.00050 | ms/batch 46.05 | loss 0.2493488 | accuracy 89.9192 | gradnorm 0.1375
+| Epoch   9 |  250/ 313 batches | lr 0.00050 | ms/batch 45.27 | loss 0.2402083 | accuracy 90.0777 | gradnorm 0.2527
+| Epoch   9 |  300/ 313 batches | lr 0.00050 | ms/batch 42.24 | loss 0.2397656 | accuracy 90.0972 | gradnorm 0.3445
+
+Test set: Average loss: 0.23946421  |  Accuracy: 90.1185
+
+| Epoch  10 |   50/ 313 batches | lr 0.00050 | ms/batch 39.16 | loss 0.2441154 | accuracy 90.1286 | gradnorm 0.3039
+| Epoch  10 |  100/ 313 batches | lr 0.00050 | ms/batch 41.36 | loss 0.2390564 | accuracy 90.1637 | gradnorm 0.4110
+| Epoch  10 |  150/ 313 batches | lr 0.00050 | ms/batch 47.42 | loss 0.2385251 | accuracy 90.2474 | gradnorm 0.4421
+| Epoch  10 |  200/ 313 batches | lr 0.00050 | ms/batch 38.02 | loss 0.2443193 | accuracy 90.2169 | gradnorm 0.1825
+| Epoch  10 |  250/ 313 batches | lr 0.00050 | ms/batch 46.81 | loss 0.2349320 | accuracy 90.4476 | gradnorm 0.7792
+| Epoch  10 |  300/ 313 batches | lr 0.00050 | ms/batch 44.03 | loss 0.2329851 | accuracy 90.5532 | gradnorm 1.3060
+
+Test set: Average loss: 0.22798346  |  Accuracy: 90.7657
+
+| Epoch  11 |   50/ 313 batches | lr 0.00050 | ms/batch 42.35 | loss 0.2310830 | accuracy 90.7978 | gradnorm 1.1636
+| Epoch  11 |  100/ 313 batches | lr 0.00050 | ms/batch 42.34 | loss 0.2149690 | accuracy 91.1609 | gradnorm 1.6577
+| Epoch  11 |  150/ 313 batches | lr 0.00050 | ms/batch 36.44 | loss 0.1984496 | accuracy 91.6278 | gradnorm 2.3292
+| Epoch  11 |  200/ 313 batches | lr 0.00050 | ms/batch 43.73 | loss 0.1829454 | accuracy 92.0789 | gradnorm 2.4310
+| Epoch  11 |  250/ 313 batches | lr 0.00050 | ms/batch 44.30 | loss 0.1713633 | accuracy 92.4442 | gradnorm 2.8928
+| Epoch  11 |  300/ 313 batches | lr 0.00050 | ms/batch 39.89 | loss 0.1601817 | accuracy 92.8098 | gradnorm 1.5370
+
+Test set: Average loss: 0.15773134  |  Accuracy: 92.8222
+
+| Epoch  12 |   50/ 313 batches | lr 0.00050 | ms/batch 38.64 | loss 0.1467796 | accuracy 93.4482 | gradnorm 3.9377
+| Epoch  12 |  100/ 313 batches | lr 0.00050 | ms/batch 47.17 | loss 0.1352593 | accuracy 94.2314 | gradnorm 1.9722
+| Epoch  12 |  150/ 313 batches | lr 0.00050 | ms/batch 38.53 | loss 0.1235380 | accuracy 94.3084 | gradnorm 1.2233
+| Epoch  12 |  200/ 313 batches | lr 0.00050 | ms/batch 40.39 | loss 0.1136953 | accuracy 94.6913 | gradnorm 3.8843
+| Epoch  12 |  250/ 313 batches | lr 0.00050 | ms/batch 45.21 | loss 0.1092835 | accuracy 94.9421 | gradnorm 6.5642
+| Epoch  12 |  300/ 313 batches | lr 0.00050 | ms/batch 40.05 | loss 0.1019826 | accuracy 95.2278 | gradnorm 7.5533
+
+Test set: Average loss: 0.12666215  |  Accuracy: 94.2832
+
+| Epoch  13 |   50/ 313 batches | lr 0.00050 | ms/batch 40.76 | loss 0.0995776 | accuracy 95.6104 | gradnorm 9.3767
+| Epoch  13 |  100/ 313 batches | lr 0.00050 | ms/batch 42.27 | loss 0.0946929 | accuracy 95.4398 | gradnorm 6.7613
+| Epoch  13 |  150/ 313 batches | lr 0.00050 | ms/batch 39.96 | loss 0.0925017 | accuracy 95.9203 | gradnorm 8.8320
+| Epoch  13 |  200/ 313 batches | lr 0.00050 | ms/batch 39.67 | loss 0.0911778 | accuracy 95.6940 | gradnorm 7.5339
+| Epoch  13 |  250/ 313 batches | lr 0.00050 | ms/batch 36.57 | loss 0.0848744 | accuracy 96.0467 | gradnorm 13.6284
+| Epoch  13 |  300/ 313 batches | lr 0.00050 | ms/batch 43.61 | loss 0.0838963 | accuracy 96.3255 | gradnorm 12.5990
+
+Test set: Average loss: 0.06669708  |  Accuracy: 97.7333
+
+| Epoch  14 |   50/ 313 batches | lr 0.00050 | ms/batch 39.99 | loss 0.0855040 | accuracy 96.2495 | gradnorm 8.8897
+| Epoch  14 |  100/ 313 batches | lr 0.00050 | ms/batch 43.90 | loss 0.0774083 | accuracy 96.6190 | gradnorm 9.6790
+| Epoch  14 |  150/ 313 batches | lr 0.00050 | ms/batch 44.53 | loss 0.0769682 | accuracy 96.5219 | gradnorm 17.0348
+| Epoch  14 |  200/ 313 batches | lr 0.00050 | ms/batch 41.45 | loss 0.0780388 | accuracy 96.6326 | gradnorm 8.0837
+| Epoch  14 |  250/ 313 batches | lr 0.00050 | ms/batch 43.85 | loss 0.0756294 | accuracy 96.6478 | gradnorm 11.3551
+| Epoch  14 |  300/ 313 batches | lr 0.00050 | ms/batch 38.58 | loss 0.0720556 | accuracy 96.9293 | gradnorm 16.5244
+
+Test set: Average loss: 0.05796632  |  Accuracy: 97.7576
+
+| Epoch  15 |   50/ 313 batches | lr 0.00050 | ms/batch 44.27 | loss 0.0747041 | accuracy 96.8017 | gradnorm 7.0241
+| Epoch  15 |  100/ 313 batches | lr 0.00050 | ms/batch 39.72 | loss 0.0694608 | accuracy 97.4759 | gradnorm 21.8448
+| Epoch  15 |  150/ 313 batches | lr 0.00050 | ms/batch 48.37 | loss 0.0696989 | accuracy 96.9725 | gradnorm 18.2066
+| Epoch  15 |  200/ 313 batches | lr 0.00050 | ms/batch 45.45 | loss 0.0639040 | accuracy 97.1286 | gradnorm 18.5065
+| Epoch  15 |  250/ 313 batches | lr 0.00050 | ms/batch 44.71 | loss 0.0698250 | accuracy 97.1100 | gradnorm 18.6412
+| Epoch  15 |  300/ 313 batches | lr 0.00050 | ms/batch 45.67 | loss 0.0651292 | accuracy 97.1481 | gradnorm 20.5365
+
+Test set: Average loss: 0.04607099  |  Accuracy: 98.5452
+
+| Epoch  16 |   50/ 313 batches | lr 0.00050 | ms/batch 44.55 | loss 0.0650985 | accuracy 97.3110 | gradnorm 12.1479
+| Epoch  16 |  100/ 313 batches | lr 0.00050 | ms/batch 40.17 | loss 0.0615953 | accuracy 97.6909 | gradnorm 16.7492
+| Epoch  16 |  150/ 313 batches | lr 0.00050 | ms/batch 43.49 | loss 0.0637766 | accuracy 97.5609 | gradnorm 21.9592
+| Epoch  16 |  200/ 313 batches | lr 0.00050 | ms/batch 40.16 | loss 0.0603122 | accuracy 97.4236 | gradnorm 3.7194
+| Epoch  16 |  250/ 313 batches | lr 0.00050 | ms/batch 46.22 | loss 0.0576384 | accuracy 97.9615 | gradnorm 10.9624
+| Epoch  16 |  300/ 313 batches | lr 0.00050 | ms/batch 43.15 | loss 0.0548428 | accuracy 98.0544 | gradnorm 18.7111
+
+Test set: Average loss: 0.07716843  |  Accuracy: 96.9817
+
+| Epoch  17 |   50/ 313 batches | lr 0.00050 | ms/batch 46.60 | loss 0.0577354 | accuracy 97.7121 | gradnorm 8.8512
+| Epoch  17 |  100/ 313 batches | lr 0.00050 | ms/batch 47.55 | loss 0.0536281 | accuracy 97.8184 | gradnorm 7.4833
+| Epoch  17 |  150/ 313 batches | lr 0.00050 | ms/batch 49.84 | loss 0.0575121 | accuracy 98.1244 | gradnorm 17.6448
+| Epoch  17 |  200/ 313 batches | lr 0.00050 | ms/batch 42.03 | loss 0.0546490 | accuracy 97.7700 | gradnorm 23.1462
+| Epoch  17 |  250/ 313 batches | lr 0.00050 | ms/batch 42.01 | loss 0.0586132 | accuracy 97.8750 | gradnorm 6.4696
+| Epoch  17 |  300/ 313 batches | lr 0.00050 | ms/batch 40.13 | loss 0.0492617 | accuracy 98.4651 | gradnorm 15.8875
+
+Test set: Average loss: 0.05541747  |  Accuracy: 97.2775
+
+| Epoch  18 |   50/ 313 batches | lr 0.00050 | ms/batch 42.43 | loss 0.0538334 | accuracy 98.3870 | gradnorm 18.6242
+| Epoch  18 |  100/ 313 batches | lr 0.00050 | ms/batch 42.30 | loss 0.0577209 | accuracy 98.0812 | gradnorm 9.8623
+| Epoch  18 |  150/ 313 batches | lr 0.00050 | ms/batch 45.98 | loss 0.0471784 | accuracy 97.9555 | gradnorm 18.2873
+| Epoch  18 |  200/ 313 batches | lr 0.00050 | ms/batch 38.06 | loss 0.0587314 | accuracy 98.3156 | gradnorm 3.4752
+| Epoch  18 |  250/ 313 batches | lr 0.00050 | ms/batch 40.11 | loss 0.0453623 | accuracy 98.5753 | gradnorm 19.5517
+| Epoch  18 |  300/ 313 batches | lr 0.00050 | ms/batch 35.96 | loss 0.0559137 | accuracy 97.7440 | gradnorm 4.4485
+
+Test set: Average loss: 0.02247143  |  Accuracy: 99.7487
+
+| Epoch  19 |   50/ 313 batches | lr 0.00050 | ms/batch 42.11 | loss 0.0476066 | accuracy 98.8012 | gradnorm 17.9799
+| Epoch  19 |  100/ 313 batches | lr 0.00050 | ms/batch 38.19 | loss 0.0486316 | accuracy 98.5724 | gradnorm 12.0964
+| Epoch  19 |  150/ 313 batches | lr 0.00050 | ms/batch 43.89 | loss 0.0490876 | accuracy 98.2731 | gradnorm 22.7036
+| Epoch  19 |  200/ 313 batches | lr 0.00050 | ms/batch 39.51 | loss 0.0531538 | accuracy 97.9645 | gradnorm 1.3571
+| Epoch  19 |  250/ 313 batches | lr 0.00050 | ms/batch 37.99 | loss 0.0406450 | accuracy 98.9345 | gradnorm 10.4807
+| Epoch  19 |  300/ 313 batches | lr 0.00050 | ms/batch 40.01 | loss 0.0488488 | accuracy 98.0078 | gradnorm 21.2922
+
+Test set: Average loss: 0.03882822  |  Accuracy: 98.2660
+
+| Epoch  20 |   50/ 313 batches | lr 0.00050 | ms/batch 44.04 | loss 0.0455365 | accuracy 98.4856 | gradnorm 0.5504
+| Epoch  20 |  100/ 313 batches | lr 0.00050 | ms/batch 44.07 | loss 0.0456264 | accuracy 99.1187 | gradnorm 28.1575
+| Epoch  20 |  150/ 313 batches | lr 0.00050 | ms/batch 43.83 | loss 0.0530493 | accuracy 98.4873 | gradnorm 6.0209
+| Epoch  20 |  200/ 313 batches | lr 0.00050 | ms/batch 44.11 | loss 0.0370593 | accuracy 98.5661 | gradnorm 18.7309
+| Epoch  20 |  250/ 313 batches | lr 0.00050 | ms/batch 41.93 | loss 0.0519544 | accuracy 98.0507 | gradnorm 5.0661
+| Epoch  20 |  300/ 313 batches | lr 0.00050 | ms/batch 42.42 | loss 0.0410072 | accuracy 99.2130 | gradnorm 3.0153
+
+Test set: Average loss: 0.01629232  |  Accuracy: 99.8602
+
+| Epoch  21 |   50/ 313 batches | lr 0.00050 | ms/batch 44.17 | loss 0.0407681 | accuracy 98.9586 | gradnorm 31.0315
+| Epoch  21 |  100/ 313 batches | lr 0.00050 | ms/batch 41.80 | loss 0.0436051 | accuracy 98.6614 | gradnorm 2.4394
+| Epoch  21 |  150/ 313 batches | lr 0.00050 | ms/batch 36.46 | loss 0.0459969 | accuracy 98.7182 | gradnorm 5.8256
+| Epoch  21 |  200/ 313 batches | lr 0.00050 | ms/batch 45.39 | loss 0.0349860 | accuracy 98.7381 | gradnorm 17.9526
+| Epoch  21 |  250/ 313 batches | lr 0.00050 | ms/batch 44.16 | loss 0.0355957 | accuracy 98.9955 | gradnorm 1.9758
+| Epoch  21 |  300/ 313 batches | lr 0.00050 | ms/batch 42.03 | loss 0.0624076 | accuracy 98.8812 | gradnorm 9.1426
+
+Test set: Average loss: 0.02650548  |  Accuracy: 99.4861
+
+| Epoch  22 |   50/ 313 batches | lr 0.00050 | ms/batch 47.93 | loss 0.0227879 | accuracy 99.5784 | gradnorm 31.8491
+| Epoch  22 |  100/ 313 batches | lr 0.00050 | ms/batch 42.41 | loss 0.0479066 | accuracy 98.5763 | gradnorm 24.0234
+| Epoch  22 |  150/ 313 batches | lr 0.00050 | ms/batch 43.98 | loss 0.0346504 | accuracy 99.1837 | gradnorm 2.3311
+| Epoch  22 |  200/ 313 batches | lr 0.00050 | ms/batch 41.43 | loss 0.0351577 | accuracy 99.1285 | gradnorm 18.1767
+| Epoch  22 |  250/ 313 batches | lr 0.00050 | ms/batch 48.02 | loss 0.0480390 | accuracy 98.3219 | gradnorm 1.4194
+| Epoch  22 |  300/ 313 batches | lr 0.00050 | ms/batch 39.78 | loss 0.0391023 | accuracy 99.3341 | gradnorm 12.0212
+
+Test set: Average loss: 0.01789847  |  Accuracy: 99.7526
+
+| Epoch  23 |   50/ 313 batches | lr 0.00050 | ms/batch 42.95 | loss 0.0358764 | accuracy 99.1733 | gradnorm 0.8094
+| Epoch  23 |  100/ 313 batches | lr 0.00050 | ms/batch 40.06 | loss 0.0377554 | accuracy 98.8718 | gradnorm 18.2078
+| Epoch  23 |  150/ 313 batches | lr 0.00050 | ms/batch 41.95 | loss 0.0202814 | accuracy 99.4315 | gradnorm 0.6249
+| Epoch  23 |  200/ 313 batches | lr 0.00050 | ms/batch 42.33 | loss 0.0661080 | accuracy 98.6889 | gradnorm 1.5695
+| Epoch  23 |  250/ 313 batches | lr 0.00050 | ms/batch 38.45 | loss 0.0343786 | accuracy 99.1626 | gradnorm 1.5267
+| Epoch  23 |  300/ 313 batches | lr 0.00050 | ms/batch 42.32 | loss 0.0295846 | accuracy 99.2851 | gradnorm 25.9404
+
+Test set: Average loss: 0.03757555  |  Accuracy: 98.3760
+
+| Epoch  24 |   50/ 313 batches | lr 0.00050 | ms/batch 42.08 | loss 0.0160977 | accuracy 99.6349 | gradnorm 11.2938
+| Epoch  24 |  100/ 313 batches | lr 0.00050 | ms/batch 40.11 | loss 0.0456214 | accuracy 99.2320 | gradnorm 7.4249
+| Epoch  24 |  150/ 313 batches | lr 0.00050 | ms/batch 42.06 | loss 0.0390377 | accuracy 99.0633 | gradnorm 2.1325
+| Epoch  24 |  200/ 313 batches | lr 0.00050 | ms/batch 43.65 | loss 0.0312487 | accuracy 99.3709 | gradnorm 7.9997
+| Epoch  24 |  250/ 313 batches | lr 0.00050 | ms/batch 40.56 | loss 0.0347907 | accuracy 99.1957 | gradnorm 4.1298
+| Epoch  24 |  300/ 313 batches | lr 0.00050 | ms/batch 41.80 | loss 0.0442426 | accuracy 98.6553 | gradnorm 1.3329
+
+Test set: Average loss: 0.01024871  |  Accuracy: 99.9338
+
+| Epoch  25 |   50/ 313 batches | lr 0.00050 | ms/batch 41.50 | loss 0.0442926 | accuracy 99.3131 | gradnorm 0.3336
+| Epoch  25 |  100/ 313 batches | lr 0.00050 | ms/batch 43.82 | loss 0.0310567 | accuracy 99.3338 | gradnorm 3.2162
+| Epoch  25 |  150/ 313 batches | lr 0.00050 | ms/batch 44.58 | loss 0.0355533 | accuracy 99.2061 | gradnorm 0.6764
+| Epoch  25 |  200/ 313 batches | lr 0.00050 | ms/batch 44.16 | loss 0.0373010 | accuracy 99.2971 | gradnorm 4.3347
+| Epoch  25 |  250/ 313 batches | lr 0.00050 | ms/batch 43.38 | loss 0.0350144 | accuracy 99.1614 | gradnorm 1.8556
+| Epoch  25 |  300/ 313 batches | lr 0.00050 | ms/batch 42.57 | loss 0.0411167 | accuracy 99.2961 | gradnorm 7.9487
+
+Test set: Average loss: 0.01407390  |  Accuracy: 99.8892
+
+| Epoch  26 |   50/ 313 batches | lr 0.00050 | ms/batch 40.64 | loss 0.0380475 | accuracy 99.0439 | gradnorm 8.8173
+| Epoch  26 |  100/ 313 batches | lr 0.00050 | ms/batch 37.80 | loss 0.0103559 | accuracy 99.9368 | gradnorm 2.5371
+| Epoch  26 |  150/ 313 batches | lr 0.00050 | ms/batch 41.69 | loss 0.0404758 | accuracy 99.1616 | gradnorm 43.6826
+| Epoch  26 |  200/ 313 batches | lr 0.00050 | ms/batch 47.33 | loss 0.0309708 | accuracy 99.4815 | gradnorm 31.7520
+| Epoch  26 |  250/ 313 batches | lr 0.00050 | ms/batch 45.97 | loss 0.0320714 | accuracy 99.2982 | gradnorm 37.1133
+| Epoch  26 |  300/ 313 batches | lr 0.00050 | ms/batch 40.25 | loss 0.0314090 | accuracy 99.1624 | gradnorm 1.0731
+
+Test set: Average loss: 0.00878484  |  Accuracy: 99.9315
+
+| Epoch  27 |   50/ 313 batches | lr 0.00050 | ms/batch 42.16 | loss 0.0338330 | accuracy 99.4679 | gradnorm 0.7700
+| Epoch  27 |  100/ 313 batches | lr 0.00050 | ms/batch 42.44 | loss 0.0702653 | accuracy 98.6070 | gradnorm 19.9957
+| Epoch  27 |  150/ 313 batches | lr 0.00050 | ms/batch 39.72 | loss 0.0183070 | accuracy 99.6338 | gradnorm 0.4534
+| Epoch  27 |  200/ 313 batches | lr 0.00050 | ms/batch 42.29 | loss 0.0313314 | accuracy 99.4870 | gradnorm 0.9104
+| Epoch  27 |  250/ 313 batches | lr 0.00050 | ms/batch 41.44 | loss 0.0383909 | accuracy 99.0316 | gradnorm 6.8962
+| Epoch  27 |  300/ 313 batches | lr 0.00050 | ms/batch 41.88 | loss 0.0093589 | accuracy 99.9586 | gradnorm 6.5574
+
+Test set: Average loss: 0.01698809  |  Accuracy: 99.7729
+
+| Epoch  28 |   50/ 313 batches | lr 0.00050 | ms/batch 43.07 | loss 0.0098763 | accuracy 99.9502 | gradnorm 6.0452
+| Epoch  28 |  100/ 313 batches | lr 0.00050 | ms/batch 41.36 | loss 0.0598773 | accuracy 98.2240 | gradnorm 0.5599
+| Epoch  28 |  150/ 313 batches | lr 0.00050 | ms/batch 46.70 | loss 0.0088054 | accuracy 99.9660 | gradnorm 0.3524
+| Epoch  28 |  200/ 313 batches | lr 0.00050 | ms/batch 46.02 | loss 0.0492953 | accuracy 99.1756 | gradnorm 0.8341
+| Epoch  28 |  250/ 313 batches | lr 0.00050 | ms/batch 43.44 | loss 0.0342061 | accuracy 99.3392 | gradnorm 1.3793
+| Epoch  28 |  300/ 313 batches | lr 0.00050 | ms/batch 36.05 | loss 0.0084611 | accuracy 99.9701 | gradnorm 4.5868
+
+Test set: Average loss: 0.02070376  |  Accuracy: 99.6339
+
+| Epoch  29 |   50/ 313 batches | lr 0.00050 | ms/batch 42.87 | loss 0.0099736 | accuracy 99.9432 | gradnorm 1.7533
+| Epoch  29 |  100/ 313 batches | lr 0.00050 | ms/batch 41.25 | loss 0.0418919 | accuracy 98.8941 | gradnorm 0.8748
+| Epoch  29 |  150/ 313 batches | lr 0.00050 | ms/batch 39.87 | loss 0.0449874 | accuracy 99.2899 | gradnorm 3.2001
+| Epoch  29 |  200/ 313 batches | lr 0.00050 | ms/batch 41.95 | loss 0.0125752 | accuracy 99.8847 | gradnorm 8.3873
+| Epoch  29 |  250/ 313 batches | lr 0.00050 | ms/batch 40.02 | loss 0.0336197 | accuracy 99.3421 | gradnorm 0.9286
+| Epoch  29 |  300/ 313 batches | lr 0.00050 | ms/batch 44.36 | loss 0.0066290 | accuracy 99.9798 | gradnorm 3.4640
+
+Test set: Average loss: 0.05355422  |  Accuracy: 98.6654
+
+| Epoch  30 |   50/ 313 batches | lr 0.00050 | ms/batch 45.89 | loss 0.0133209 | accuracy 99.8593 | gradnorm 3.6568
+| Epoch  30 |  100/ 313 batches | lr 0.00050 | ms/batch 41.89 | loss 0.0312345 | accuracy 99.1776 | gradnorm 0.4450
+| Epoch  30 |  150/ 313 batches | lr 0.00050 | ms/batch 42.33 | loss 0.0061710 | accuracy 99.9837 | gradnorm 1.8510
+| Epoch  30 |  200/ 313 batches | lr 0.00050 | ms/batch 42.21 | loss 0.0394236 | accuracy 99.4595 | gradnorm 0.3231
+| Epoch  30 |  250/ 313 batches | lr 0.00050 | ms/batch 37.76 | loss 0.0442546 | accuracy 98.9188 | gradnorm 24.1731
+| Epoch  30 |  300/ 313 batches | lr 0.00050 | ms/batch 37.96 | loss 0.0105096 | accuracy 99.8108 | gradnorm 0.8282
+
+Test set: Average loss: 0.00633384  |  Accuracy: 99.9670
+
+| Epoch  31 |   50/ 313 batches | lr 0.00050 | ms/batch 42.08 | loss 0.0485975 | accuracy 99.2488 | gradnorm 0.1734
+| Epoch  31 |  100/ 313 batches | lr 0.00050 | ms/batch 38.10 | loss 0.0266347 | accuracy 99.6908 | gradnorm 62.1606
+| Epoch  31 |  150/ 313 batches | lr 0.00050 | ms/batch 42.30 | loss 0.0213990 | accuracy 99.7196 | gradnorm 1.5498
+| Epoch  31 |  200/ 313 batches | lr 0.00050 | ms/batch 37.80 | loss 0.0334135 | accuracy 99.3498 | gradnorm 0.5056
+| Epoch  31 |  250/ 313 batches | lr 0.00050 | ms/batch 43.23 | loss 0.0439189 | accuracy 99.2974 | gradnorm 3.3263
+| Epoch  31 |  300/ 313 batches | lr 0.00050 | ms/batch 40.39 | loss 0.0225407 | accuracy 99.4725 | gradnorm 0.8964
+
+Test set: Average loss: 0.00682030  |  Accuracy: 99.9852
+
+| Epoch  32 |   50/ 313 batches | lr 0.00050 | ms/batch 44.71 | loss 0.0364221 | accuracy 99.4178 | gradnorm 0.3813
+| Epoch  32 |  100/ 313 batches | lr 0.00050 | ms/batch 41.89 | loss 0.0069446 | accuracy 99.9811 | gradnorm 0.9314
+| Epoch  32 |  150/ 313 batches | lr 0.00050 | ms/batch 41.28 | loss 0.0506869 | accuracy 98.6301 | gradnorm 6.9317
+| Epoch  32 |  200/ 313 batches | lr 0.00050 | ms/batch 47.99 | loss 0.0068505 | accuracy 99.9819 | gradnorm 0.4611
+| Epoch  32 |  250/ 313 batches | lr 0.00050 | ms/batch 40.66 | loss 0.0048350 | accuracy 99.9889 | gradnorm 2.4658
+| Epoch  32 |  300/ 313 batches | lr 0.00050 | ms/batch 43.61 | loss 0.0589340 | accuracy 98.5740 | gradnorm 0.5791
+
+Test set: Average loss: 0.00647865  |  Accuracy: 99.9817
+
+| Epoch  33 |   50/ 313 batches | lr 0.00050 | ms/batch 48.20 | loss 0.0055058 | accuracy 99.9873 | gradnorm 1.3326
+| Epoch  33 |  100/ 313 batches | lr 0.00050 | ms/batch 45.49 | loss 0.0506623 | accuracy 98.8957 | gradnorm 19.0591
+| Epoch  33 |  150/ 313 batches | lr 0.00050 | ms/batch 46.28 | loss 0.0125680 | accuracy 99.8331 | gradnorm 0.4299
+| Epoch  33 |  200/ 313 batches | lr 0.00050 | ms/batch 43.62 | loss 0.0438395 | accuracy 99.3533 | gradnorm 1.6733
+| Epoch  33 |  250/ 313 batches | lr 0.00050 | ms/batch 48.08 | loss 0.0096732 | accuracy 99.9125 | gradnorm 0.6127
+| Epoch  33 |  300/ 313 batches | lr 0.00050 | ms/batch 23.64 | loss 0.0432188 | accuracy 98.9841 | gradnorm 11.4656
+
+Test set: Average loss: 0.00890742  |  Accuracy: 99.9575
+
+| Epoch  34 |   50/ 313 batches | lr 0.00050 | ms/batch 11.09 | loss 0.0073430 | accuracy 99.9482 | gradnorm 20.9150
+| Epoch  34 |  100/ 313 batches | lr 0.00050 | ms/batch 10.40 | loss 0.0337470 | accuracy 99.3117 | gradnorm 0.5049
+| Epoch  34 |  150/ 313 batches | lr 0.00050 | ms/batch 11.38 | loss 0.0048402 | accuracy 99.9905 | gradnorm 0.5417
+| Epoch  34 |  200/ 313 batches | lr 0.00050 | ms/batch 11.28 | loss 0.0604695 | accuracy 99.0964 | gradnorm 1.0140
+| Epoch  34 |  250/ 313 batches | lr 0.00050 | ms/batch 10.62 | loss 0.0067495 | accuracy 99.9746 | gradnorm 6.4777
+| Epoch  34 |  300/ 313 batches | lr 0.00050 | ms/batch 10.74 | loss 0.0274440 | accuracy 99.4756 | gradnorm 0.6028
+
+Test set: Average loss: 0.00477489  |  Accuracy: 99.9925
+
+| Epoch  35 |   50/ 313 batches | lr 0.00050 | ms/batch 10.71 | loss 0.0042016 | accuracy 99.9923 | gradnorm 0.7624
+| Epoch  35 |  100/ 313 batches | lr 0.00050 | ms/batch 10.15 | loss 0.0549888 | accuracy 98.7543 | gradnorm 0.5829
+| Epoch  35 |  150/ 313 batches | lr 0.00050 | ms/batch 10.36 | loss 0.0056597 | accuracy 99.9863 | gradnorm 0.5871
+| Epoch  35 |  200/ 313 batches | lr 0.00050 | ms/batch 10.61 | loss 0.0406955 | accuracy 99.0454 | gradnorm 0.4522
+| Epoch  35 |  250/ 313 batches | lr 0.00050 | ms/batch 10.61 | loss 0.0049652 | accuracy 99.9903 | gradnorm 0.5389
+| Epoch  35 |  300/ 313 batches | lr 0.00050 | ms/batch 10.51 | loss 0.0555448 | accuracy 99.2083 | gradnorm 0.9998
+
+Test set: Average loss: 0.00836172  |  Accuracy: 99.9585
+
+| Epoch  36 |   50/ 313 batches | lr 0.00050 | ms/batch 10.90 | loss 0.0061114 | accuracy 99.9837 | gradnorm 0.7794
+| Epoch  36 |  100/ 313 batches | lr 0.00050 | ms/batch 10.85 | loss 0.0566816 | accuracy 99.0976 | gradnorm 2.0185
+| Epoch  36 |  150/ 313 batches | lr 0.00050 | ms/batch 10.72 | loss 0.0068662 | accuracy 99.9810 | gradnorm 0.6738
+| Epoch  36 |  200/ 313 batches | lr 0.00050 | ms/batch 10.29 | loss 0.0290331 | accuracy 99.3568 | gradnorm 0.4423
+| Epoch  36 |  250/ 313 batches | lr 0.00050 | ms/batch 10.34 | loss 0.0048672 | accuracy 99.9904 | gradnorm 0.5229
+| Epoch  36 |  300/ 313 batches | lr 0.00050 | ms/batch 10.61 | loss 0.0369925 | accuracy 99.2727 | gradnorm 2.8239
+
+Test set: Average loss: 0.00629375  |  Accuracy: 99.9798
+
+| Epoch  37 |   50/ 313 batches | lr 0.00050 | ms/batch 10.84 | loss 0.0048104 | accuracy 99.9917 | gradnorm 0.1695
+| Epoch  37 |  100/ 313 batches | lr 0.00050 | ms/batch 11.07 | loss 0.0436817 | accuracy 98.9779 | gradnorm 16.9217
+| Epoch  37 |  150/ 313 batches | lr 0.00050 | ms/batch 10.90 | loss 0.0147729 | accuracy 99.5557 | gradnorm 0.2467
+| Epoch  37 |  200/ 313 batches | lr 0.00050 | ms/batch 12.80 | loss 0.0040230 | accuracy 99.9938 | gradnorm 0.2884
+| Epoch  37 |  250/ 313 batches | lr 0.00050 | ms/batch 12.63 | loss 0.0030379 | accuracy 99.9950 | gradnorm 1.9184
+| Epoch  37 |  300/ 313 batches | lr 0.00050 | ms/batch 11.50 | loss 0.0590723 | accuracy 98.8387 | gradnorm 0.4282
+
+Test set: Average loss: 0.00475934  |  Accuracy: 99.9919
+
+| Epoch  38 |   50/ 313 batches | lr 0.00050 | ms/batch 10.70 | loss 0.0039889 | accuracy 99.9948 | gradnorm 0.2711
+| Epoch  38 |  100/ 313 batches | lr 0.00050 | ms/batch 10.34 | loss 0.0593910 | accuracy 99.0431 | gradnorm 1.6601
+| Epoch  38 |  150/ 313 batches | lr 0.00050 | ms/batch 10.60 | loss 0.0073528 | accuracy 99.9623 | gradnorm 0.2737
+| Epoch  38 |  200/ 313 batches | lr 0.00050 | ms/batch 10.52 | loss 0.0038662 | accuracy 99.9948 | gradnorm 1.1380
+| Epoch  38 |  250/ 313 batches | lr 0.00050 | ms/batch 10.80 | loss 0.0455370 | accuracy 99.2475 | gradnorm 0.5034
+| Epoch  38 |  300/ 313 batches | lr 0.00050 | ms/batch 10.62 | loss 0.0044686 | accuracy 99.9858 | gradnorm 8.8203
+
+Test set: Average loss: 0.01532387  |  Accuracy: 99.4989
+
+| Epoch  39 |   50/ 313 batches | lr 0.00050 | ms/batch 11.16 | loss 0.0056588 | accuracy 99.9475 | gradnorm 0.0827
+| Epoch  39 |  100/ 313 batches | lr 0.00050 | ms/batch 11.91 | loss 0.0029774 | accuracy 99.9960 | gradnorm 0.4678
+| Epoch  39 |  150/ 313 batches | lr 0.00050 | ms/batch 10.94 | loss 0.0719256 | accuracy 99.0938 | gradnorm 3.0803
+| Epoch  39 |  200/ 313 batches | lr 0.00050 | ms/batch 10.97 | loss 0.0123527 | accuracy 99.7432 | gradnorm 0.4253
+| Epoch  39 |  250/ 313 batches | lr 0.00050 | ms/batch 10.80 | loss 0.0040402 | accuracy 99.9929 | gradnorm 0.3573
+| Epoch  39 |  300/ 313 batches | lr 0.00050 | ms/batch 10.95 | loss 0.0080985 | accuracy 99.8761 | gradnorm 31.3410
+
+Test set: Average loss: 0.01066273  |  Accuracy: 99.8778
+
+| Epoch  40 |   50/ 313 batches | lr 0.00050 | ms/batch 11.28 | loss 0.0058482 | accuracy 99.9757 | gradnorm 0.0655
+| Epoch  40 |  100/ 313 batches | lr 0.00050 | ms/batch 11.15 | loss 0.0031836 | accuracy 99.9957 | gradnorm 0.3450
+| Epoch  40 |  150/ 313 batches | lr 0.00050 | ms/batch 11.18 | loss 0.0470536 | accuracy 99.3688 | gradnorm 4.5352
+| Epoch  40 |  200/ 313 batches | lr 0.00050 | ms/batch 10.59 | loss 0.0090412 | accuracy 99.8928 | gradnorm 0.4423
+| Epoch  40 |  250/ 313 batches | lr 0.00050 | ms/batch 10.57 | loss 0.0033588 | accuracy 99.9915 | gradnorm 6.3467
+| Epoch  40 |  300/ 313 batches | lr 0.00050 | ms/batch 10.88 | loss 0.0456470 | accuracy 99.2078 | gradnorm 0.3106
+
+Test set: Average loss: 0.00405457  |  Accuracy: 99.9946
+
+| Epoch  41 |   50/ 313 batches | lr 0.00050 | ms/batch 11.91 | loss 0.0033058 | accuracy 99.9968 | gradnorm 0.0814
+| Epoch  41 |  100/ 313 batches | lr 0.00050 | ms/batch 10.87 | loss 0.0596649 | accuracy 99.0244 | gradnorm 1.4842
+| Epoch  41 |  150/ 313 batches | lr 0.00050 | ms/batch 10.86 | loss 0.0102243 | accuracy 99.8689 | gradnorm 0.3017
+| Epoch  41 |  200/ 313 batches | lr 0.00050 | ms/batch 11.02 | loss 0.0303479 | accuracy 99.3812 | gradnorm 1.8943
+| Epoch  41 |  250/ 313 batches | lr 0.00050 | ms/batch 11.10 | loss 0.0053784 | accuracy 99.9823 | gradnorm 0.3987
+| Epoch  41 |  300/ 313 batches | lr 0.00050 | ms/batch 11.13 | loss 0.0028862 | accuracy 99.9974 | gradnorm 0.3130
+
+Test set: Average loss: 0.00224893  |  Accuracy: 99.9979
+
+| Epoch  42 |   50/ 313 batches | lr 0.00050 | ms/batch 11.00 | loss 0.0560581 | accuracy 99.1175 | gradnorm 10.1031
+| Epoch  42 |  100/ 313 batches | lr 0.00050 | ms/batch 10.79 | loss 0.0103275 | accuracy 99.7817 | gradnorm 0.1936
+| Epoch  42 |  150/ 313 batches | lr 0.00050 | ms/batch 10.72 | loss 0.0033514 | accuracy 99.9961 | gradnorm 0.2090
+| Epoch  42 |  200/ 313 batches | lr 0.00050 | ms/batch 10.80 | loss 0.0499531 | accuracy 99.2309 | gradnorm 0.6246
+| Epoch  42 |  250/ 313 batches | lr 0.00050 | ms/batch 11.13 | loss 0.0048008 | accuracy 99.9885 | gradnorm 0.3685
+| Epoch  42 |  300/ 313 batches | lr 0.00050 | ms/batch 12.75 | loss 0.0028580 | accuracy 99.9975 | gradnorm 0.4519
+
+Test set: Average loss: 0.00222835  |  Accuracy: 99.9984
+
+| Epoch  43 |   50/ 313 batches | lr 0.00050 | ms/batch 11.49 | loss 0.0544475 | accuracy 99.0743 | gradnorm 0.4709
+| Epoch  43 |  100/ 313 batches | lr 0.00050 | ms/batch 10.23 | loss 0.0053428 | accuracy 99.9856 | gradnorm 0.1852
+| Epoch  43 |  150/ 313 batches | lr 0.00050 | ms/batch 10.37 | loss 0.0029123 | accuracy 99.9970 | gradnorm 0.2100
+| Epoch  43 |  200/ 313 batches | lr 0.00050 | ms/batch 10.58 | loss 0.0523307 | accuracy 99.1788 | gradnorm 4.6084
+| Epoch  43 |  250/ 313 batches | lr 0.00050 | ms/batch 12.35 | loss 0.0161929 | accuracy 99.6074 | gradnorm 0.4138
+| Epoch  43 |  300/ 313 batches | lr 0.00050 | ms/batch 10.77 | loss 0.0033543 | accuracy 99.9974 | gradnorm 0.3259
+
+Test set: Average loss: 0.00253684  |  Accuracy: 99.9983
+
+| Epoch  44 |   50/ 313 batches | lr 0.00050 | ms/batch 10.99 | loss 0.0022299 | accuracy 99.9983 | gradnorm 0.2865
+| Epoch  44 |  100/ 313 batches | lr 0.00050 | ms/batch 10.85 | loss 0.0603664 | accuracy 99.1559 | gradnorm 0.5064
+| Epoch  44 |  150/ 313 batches | lr 0.00050 | ms/batch 11.02 | loss 0.0040757 | accuracy 99.9921 | gradnorm 0.1758
+| Epoch  44 |  200/ 313 batches | lr 0.00050 | ms/batch 10.96 | loss 0.0025983 | accuracy 99.9975 | gradnorm 2.0819
+| Epoch  44 |  250/ 313 batches | lr 0.00050 | ms/batch 13.57 | loss 0.0487949 | accuracy 99.2777 | gradnorm 0.2906
+| Epoch  44 |  300/ 313 batches | lr 0.00050 | ms/batch 13.05 | loss 0.0031730 | accuracy 99.9972 | gradnorm 0.2916
+
+Test set: Average loss: 0.00237371  |  Accuracy: 99.9982
+
+| Epoch  45 |   50/ 313 batches | lr 0.00050 | ms/batch 11.70 | loss 0.0020994 | accuracy 99.9987 | gradnorm 0.0812
+| Epoch  45 |  100/ 313 batches | lr 0.00050 | ms/batch 10.99 | loss 0.0015546 | accuracy 99.9990 | gradnorm 0.4113
+| Epoch  45 |  150/ 313 batches | lr 0.00050 | ms/batch 10.53 | loss 0.0699818 | accuracy 98.9762 | gradnorm 5.4067
+| Epoch  45 |  200/ 313 batches | lr 0.00050 | ms/batch 10.39 | loss 0.0171312 | accuracy 99.4986 | gradnorm 0.3959
+| Epoch  45 |  250/ 313 batches | lr 0.00050 | ms/batch 11.45 | loss 0.0034961 | accuracy 99.9939 | gradnorm 0.2752
+| Epoch  45 |  300/ 313 batches | lr 0.00050 | ms/batch 12.42 | loss 0.0023406 | accuracy 99.9973 | gradnorm 4.3375
+
+Test set: Average loss: 0.01503976  |  Accuracy: 99.7212
+
+| Epoch  46 |   50/ 313 batches | lr 0.00050 | ms/batch 10.50 | loss 0.0065441 | accuracy 99.9585 | gradnorm 0.1349
+| Epoch  46 |  100/ 313 batches | lr 0.00050 | ms/batch 10.60 | loss 0.0025767 | accuracy 99.9977 | gradnorm 0.2324
+| Epoch  46 |  150/ 313 batches | lr 0.00050 | ms/batch 11.93 | loss 0.0017622 | accuracy 99.9990 | gradnorm 0.1002
+| Epoch  46 |  200/ 313 batches | lr 0.00050 | ms/batch 10.58 | loss 0.0013257 | accuracy 99.9995 | gradnorm 0.7614
+| Epoch  46 |  250/ 313 batches | lr 0.00050 | ms/batch 10.84 | loss 0.0866510 | accuracy 98.9318 | gradnorm 0.4941
+| Epoch  46 |  300/ 313 batches | lr 0.00050 | ms/batch 11.03 | loss 0.0039203 | accuracy 99.9885 | gradnorm 0.1892
+
+Test set: Average loss: 0.00255756  |  Accuracy: 99.9974
+
+| Epoch  47 |   50/ 313 batches | lr 0.00050 | ms/batch 10.72 | loss 0.0022128 | accuracy 99.9981 | gradnorm 0.0439
+| Epoch  47 |  100/ 313 batches | lr 0.00050 | ms/batch 10.59 | loss 0.0016239 | accuracy 99.9988 | gradnorm 0.2827
+| Epoch  47 |  150/ 313 batches | lr 0.00050 | ms/batch 10.49 | loss 0.0685070 | accuracy 99.1081 | gradnorm 1.5513
+| Epoch  47 |  200/ 313 batches | lr 0.00050 | ms/batch 11.89 | loss 0.0061925 | accuracy 99.9551 | gradnorm 0.3693
+| Epoch  47 |  250/ 313 batches | lr 0.00050 | ms/batch 10.85 | loss 0.0029101 | accuracy 99.9953 | gradnorm 0.2428
+| Epoch  47 |  300/ 313 batches | lr 0.00050 | ms/batch 10.69 | loss 0.0019807 | accuracy 99.9987 | gradnorm 0.3918
+
+Test set: Average loss: 0.00157088  |  Accuracy: 99.9990
+
+| Epoch  48 |   50/ 313 batches | lr 0.00050 | ms/batch 11.44 | loss 0.0014253 | accuracy 99.9992 | gradnorm 0.8374
+| Epoch  48 |  100/ 313 batches | lr 0.00050 | ms/batch 10.93 | loss 0.0582343 | accuracy 99.0592 | gradnorm 0.2129
+| Epoch  48 |  150/ 313 batches | lr 0.00050 | ms/batch 10.94 | loss 0.0029524 | accuracy 99.9953 | gradnorm 0.1199
+| Epoch  48 |  200/ 313 batches | lr 0.00050 | ms/batch 10.63 | loss 0.0018757 | accuracy 99.9985 | gradnorm 0.2847
+| Epoch  48 |  250/ 313 batches | lr 0.00050 | ms/batch 11.42 | loss 0.0532930 | accuracy 99.3541 | gradnorm 5.0257
+| Epoch  48 |  300/ 313 batches | lr 0.00050 | ms/batch 10.48 | loss 0.0170969 | accuracy 99.5169 | gradnorm 0.4338
+
+Test set: Average loss: 0.00339331  |  Accuracy: 99.9962
+
+| Epoch  49 |   50/ 313 batches | lr 0.00050 | ms/batch 10.42 | loss 0.0026736 | accuracy 99.9981 | gradnorm 0.0460
+| Epoch  49 |  100/ 313 batches | lr 0.00050 | ms/batch 10.22 | loss 0.0017877 | accuracy 99.9990 | gradnorm 0.1711
+| Epoch  49 |  150/ 313 batches | lr 0.00050 | ms/batch 10.53 | loss 0.0013271 | accuracy 99.9995 | gradnorm 0.1214
+| Epoch  49 |  200/ 313 batches | lr 0.00050 | ms/batch 10.60 | loss 0.0010488 | accuracy 99.9997 | gradnorm 0.4766
+| Epoch  49 |  250/ 313 batches | lr 0.00050 | ms/batch 10.56 | loss 0.0590452 | accuracy 99.1228 | gradnorm 0.5398
+| Epoch  49 |  300/ 313 batches | lr 0.00050 | ms/batch 10.39 | loss 0.0025447 | accuracy 99.9962 | gradnorm 0.2244
+
+Test set: Average loss: 0.00167234  |  Accuracy: 99.9985
+
+| Epoch  50 |   50/ 313 batches | lr 0.00050 | ms/batch 10.58 | loss 0.0014676 | accuracy 99.9990 | gradnorm 0.1107
+| Epoch  50 |  100/ 313 batches | lr 0.00050 | ms/batch 10.47 | loss 0.1072645 | accuracy 98.9336 | gradnorm 0.7697
+| Epoch  50 |  150/ 313 batches | lr 0.00050 | ms/batch 10.62 | loss 0.0058509 | accuracy 99.9638 | gradnorm 0.2245
+| Epoch  50 |  200/ 313 batches | lr 0.00050 | ms/batch 10.57 | loss 0.0027314 | accuracy 99.9960 | gradnorm 0.2507
+| Epoch  50 |  250/ 313 batches | lr 0.00050 | ms/batch 10.54 | loss 0.0019813 | accuracy 99.9978 | gradnorm 0.2234
+| Epoch  50 |  300/ 313 batches | lr 0.00050 | ms/batch 11.68 | loss 0.0095947 | accuracy 99.8388 | gradnorm 40.1325
+
+Test set: Average loss: 0.01264806  |  Accuracy: 99.7986
+
